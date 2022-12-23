@@ -4,10 +4,10 @@ import copy
 from mycodo.inputs.base_input import AbstractInput
 
 measurements_dict = {
-    0: {"measurement": "light_uv", "unit": "uv"},
-    1: {"measurement": "light", "unit": "full"},
-    2: {"measurement": "light_uvi", "unit": "uvi"},
-    3: {"measurement": "light", "unit": "lux"},
+    0: {"measurement": "light", "unit": "unitless", "name": "UV"},
+    1: {"measurement": "light", "unit": "unitless", "name": "Visible"},
+    2: {"measurement": "light", "unit": "unitless", "name": "UV Index"},
+    3: {"measurement": "light", "unit": "lux", "name": "Visible"},
 }
 
 # Input information
@@ -28,8 +28,8 @@ INPUT_INFORMATION = {
     "options_enabled": ["i2c_location", "period", "pre_output"],
     "options_disabled": ["interface"],
     "dependencies_module": [
-        ("pip-pypi", "adafruit_extended_bus", "adafruit-extended-bus==1.0.1"),
-        ("pip-pypi", "adafruit_ltr390", "adafruit-circuitpython-ltr390==1.1.1"),
+        ("pip-pypi", "adafruit_extended_bus", "adafruit-extended-bus==1.0.2"),
+        ("pip-pypi", "adafruit_ltr390", "adafruit-circuitpython-ltr390==1.1.12"),
     ],
     "interfaces": ["I2C"],
     "i2c_location": ["0x53"],
